@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario registro davante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .fake-form {
+            background: white;
+            padding: 25px;
+            width: 320px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .fake-form img {
+            width: 120px;        /* tamaño del logo */
+            margin-bottom: 15px; /* separación */
+        }
+
+        .fake-form h2 {
+            color: #333;
+            margin: 0 0 15px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0078FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="fake-form">
+
+    <!-- 🔥 Logo de Davante -->
+    <img src="descarga.png" alt="Logo Davante">
+
+    <h2>Iniciar sesión</h2>
+
+    <input type="text" id="usuario" placeholder="Correo electrónico">
+    <input type="password" id="password" placeholder="Contraseña">
+
+    <button onclick="redirigir()">Entrar</button>
+</div>
+
+<script>
+    function redirigir() {
+        window.location.href = "simulacion.html";
+    }
+</script>
+
+</body>
+</html>
