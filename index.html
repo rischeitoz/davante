@@ -1,8 +1,10 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 🔥 necesario para móviles -->
     <title>Formulario registro davante</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,20 +12,24 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            margin: 0;
+            padding: 15px; /* margen para evitar que toque los bordes en móviles */
         }
 
         .fake-form {
             background: white;
             padding: 25px;
-            width: 320px;
-            border-radius: 8px;
+            width: 100%;            /* 🔥 ocupa todo el ancho disponible */
+            max-width: 350px;       /* 🔥 límite para que no se vea gigante en PC */
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
             text-align: center;
         }
 
         .fake-form img {
             width: 120px;
+            max-width: 50%;         /* 🔥 se adapta si la pantalla es muy pequeña */
             margin-bottom: 15px;
         }
 
@@ -33,32 +39,36 @@
         }
 
         input {
-            width: 80%;             /* 🔥 más estrechos */
-            padding: 10px;
-            margin: 10px auto;      /* 🔥 centra horizontal */
-            display: block;         /* 🔥 permite centrar con margin auto */
+            width: 100%;            /* 🔥 más usable en móviles */
+            padding: 12px;
+            margin: 10px 0;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 6px;
+            font-size: 16px;        /* 🔥 evita zoom automático en iPhone */
         }
 
         button {
-            width: 80%;             /* para que quede alineado con los inputs */
-            padding: 10px;
+            width: 100%;
+            padding: 12px;
             background: #0078FF;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 16px;
             margin-top: 10px;
+        }
+
+        button:hover {
+            background: #005FCC;
         }
     </style>
 </head>
+
 <body>
 
 <div class="fake-form">
-
     <img src="descarga.png" alt="Logo Davante">
-
     <h2>Iniciar sesión</h2>
 
     <input type="text" id="usuario" placeholder="Correo electrónico">
