@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario registro Davante</title>
+    <title>Formulario registro davante</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,72 +10,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            height: 100vh;
         }
 
         .fake-form {
             background: white;
             padding: 25px;
-            width: 100%;
-            max-width: 380px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            width: 320px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
             text-align: center;
         }
 
         .fake-form img {
-            width: 140px;
-            margin-bottom: 20px;
+            width: 120px;
+            margin-bottom: 15px;
         }
 
         .fake-form h2 {
             color: #333;
-            margin-bottom: 20px;
-            font-size: 1.6rem;
+            margin: 0 0 15px 0;
         }
 
         input {
-            width: 100%;
-            padding: 12px;
-            margin: 12px 0;
+            width: 80%;             /* 🔥 más estrechos */
+            padding: 10px;
+            margin: 10px auto;      /* 🔥 centra horizontal */
+            display: block;         /* 🔥 permite centrar con margin auto */
             border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 5px;
         }
 
         button {
-            width: 100%;
-            padding: 12px;
+            width: 80%;             /* para que quede alineado con los inputs */
+            padding: 10px;
             background: #0078FF;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 1rem;
             margin-top: 10px;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: #0060CC;
-        }
-
-        /* 📱 Ajustes para móviles muy pequeños */
-        @media (max-width: 360px) {
-            .fake-form {
-                padding: 18px;
-            }
-            .fake-form img {
-                width: 110px;
-            }
-            .fake-form h2 {
-                font-size: 1.4rem;
-            }
-            input, button {
-                padding: 10px;
-            }
         }
     </style>
 </head>
