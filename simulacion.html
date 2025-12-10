@@ -2,9 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Simulación de Ciberataque</title>
 
 <style>
@@ -56,7 +54,7 @@
         height: 100%;
         width: 0%;
         background: #0f0;
-        transition: width 0.1s linear;
+        transition: width 0.2s linear;
     }
 
     @media (min-width: 768px) {
@@ -112,33 +110,34 @@
     ];
 
     let index = 0;
-    let progress = 0;
+    const totalLines = lines.length;
+    const totalTime = 15000; 
+    const timePerLine = totalTime / totalLines; 
 
     function addLine() {
-        if (index < lines.length) {
+        if (index < totalLines) {
             terminal.innerHTML += "> " + lines[index] + "<br>";
             terminal.scrollTop = terminal.scrollHeight;
+
+            // Progreso sincronizado: (líneas mostradas / total) * 100
+            let progress = ((index + 1) / totalLines) * 100;
+            bar.style.width = progress + "%";
+
             index++;
         }
     }
 
-    function updateProgress() {
-        if (progress < 100) {
-            progress++;
-            bar.style.width = progress + "%";
-        }
-    }
+    // Añadir líneas exactamente sincronizadas
+    const interval = setInterval(() => {
+        addLine();
+        if (index >= totalLines) clearInterval(interval);
+    }, timePerLine);
 
-    // Más rápido para ajustarse a 15 segundos
-    setInterval(addLine, 500);   // 0.5 s por línea
-    setInterval(updateProgress, 30); // progreso más veloz
-
-    // Redirección a los 15 segundos exactos
+    // Redirección al final
     setTimeout(() => {
         window.location.href = "final.html";
-    }, 15000);
+    }, totalTime);
 </script>
 
 </body>
 </html>
-
