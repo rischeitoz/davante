@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Imprescindible para que se vea bien en teléfonos -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Formulario registro davante</title>
 
     <style>
@@ -12,7 +15,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            min-height: 100vh; /* Mejor que height fija */
             margin: 0;
             padding: 20px;
         }
@@ -21,50 +24,61 @@
             background: white;
             padding: 25px;
             width: 100%;
-            max-width: 350px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            max-width: 360px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
             text-align: center;
         }
 
         .fake-form img {
-            width: 40%;
+            width: 45%;
             max-width: 140px;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .fake-form h2 {
             color: #333;
-            margin: 0 0 15px 0;
-            font-size: 1.4rem;
+            margin-bottom: 18px;
+            font-size: 6vw; /* Escala automático */
         }
 
         input {
             width: 100%;
-            padding: 12px;
-            margin: 10px 0;
+            padding: 14px;
+            margin: 12px 0;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 4.3vw;
+            box-sizing: border-box;
         }
 
         button {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background: #0078FF;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
+            font-size: 4.5vw;
             cursor: pointer;
-            font-size: 1rem;
+            margin-top: 10px;
         }
 
         button:active {
             background: #005FCC;
         }
+
+        /* Ajuste automático para pantallas grandes */
+        @media (min-width: 768px) {
+            .fake-form h2 {
+                font-size: 24px;
+            }
+            input, button {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
-
 <body>
 
 <div class="fake-form">
