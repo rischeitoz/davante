@@ -2,26 +2,42 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Esto permite que la página se vea bien en móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Simulación</title>
+
     <style>
         body {
             background: black;
             color: red;
             font-family: Consolas, monospace;
             text-align: center;
-            padding-top: 100px;
+            padding: 40px 10px; /* Mejor margen para móviles */
         }
 
         h1 {
-            font-size: 60px;
+            font-size: 12vw; /* Escala automáticamente en móviles */
             margin-bottom: 20px;
-            /* Animación de parpadeo */
             animation: parpadeo 1s infinite;
         }
 
         p {
-            font-size: 22px;
+            font-size: 5vw;  /* Texto también adaptable */
+            max-width: 600px;
+            margin: 10px auto;
             color: white;
+        }
+
+        /* En pantallas grandes (PC), restauramos tamaños aproximados */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 60px;
+            }
+            p {
+                font-size: 22px;
+            }
         }
 
         /* Animación de luces parpadeantes */
@@ -42,3 +58,4 @@
 
 </body>
 </html>
+
